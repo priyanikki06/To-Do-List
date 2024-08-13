@@ -2,16 +2,6 @@
 
 A simple and intuitive Todo List application built using JavaScript, HTML, and CSS. This app allows you to manage your tasks efficiently with features like editing, scheduling, adding reminders, and a calendar view. The app utilizes [Flatpickr](https://flatpickr.js.org/) for a sleek calendar interface and saves data locally for persistent task management.
 
-## Table of Contents
-
-- [Features](#features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Features
 
