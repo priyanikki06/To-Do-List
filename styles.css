@@ -1,0 +1,348 @@
+/* Reset and Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+/* Input and Button Groups */
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.input-group input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.icon-btn {
+    padding: 10px;
+    border: none;
+    background: none;
+    color: grey;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.icon-btn:hover {
+    color: #007bff;
+}
+
+.task-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.task-button:hover {
+    background-color: #0056b3;
+}
+
+/* Task List */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.end-date {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.end-date.red {
+    color: red;
+}
+
+.end-date.orange {
+    color: orange;
+}
+
+/* Important Icon */
+.icon-btn.important-icon {
+    color: grey;
+}
+
+.icon-btn.important-icon.golden {
+    background: linear-gradient(45deg, #ffd700, #ffcc00, #ffb400);
+    background-size: 200% 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: background-position 0.5s;
+}
+
+.icon-btn.important-icon.golden:hover {
+    background-position: right;
+}
+
+.icon-btn.important-icon.golden i {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.large-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Reminder Modal styles */
+.reminder-button {
+    background-color: #ffffff;
+    color: rgb(49, 49, 49);
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reminder-button:hover {
+    background-color: #007bff;
+}
+
+/* Additional Task List styles */
+.task-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.golden {
+    color: gold;
+}
+
+.due-soon {
+    color: orange;
+}
+
+.overdue {
+    color: red;
+}
+
+
+/*--------------------------------*/
+
+#reminderModal {
+    display: none; /* Hide initially */
+}
+
+#reminderModal.visible {
+    display: block; /* Show when 'visible' class is added */
+}
+
+#reminderModal .modal-content {
+    margin: 15% auto; /* Adjust vertical positioning */
+    padding: 20px;
+    text-align: center; /* Center text and buttons */
+}
+
+
+/* Modal Content Style */
+.modal-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px; /* Adjusted max-width for responsiveness */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft box shadow */
+}
+
+/* Heading Style */
+.modal-content h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Reminder Options Container */
+.reminder-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid layout */
+    gap: 10px; /* Gap between buttons */
+}
+
+/* Reminder Option Button Style */
+.reminder-option {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reminder-option:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.reminder-option:focus {
+    outline: none;
+}
+
+.reminder-option:active {
+    transform: translateY(1px);
+}
+
+
+/* Reminder Card */
+.reminder-card {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Increased padding for larger card */
+    border-radius: 12px; /* Increased border radius */
+    display: none;
+    z-index: 1000;
+    width: 300px; /* Set a fixed width */
+}
+
+.reminder-card.visible {
+    display: block; /* Show when 'visible' class is added */
+}
+
+.reminder-content {
+    display: flex;
+    flex-direction: column; /* Align content vertically */
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center text */
+}
+
+#reminderText {
+    font-size: 1.2em; /* Larger font size */
+    margin-bottom: 20px; /* Spacing below text */
+}
+
+#dismissReminder {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px; /* Padding adjustment */
+    cursor: pointer;
+    border-radius: 6px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+#dismissReminder:hover {
+    background-color: #0056b3;
+}
+
+/* Modern Button Style */
+.task-button {
+    padding: 12px 24px; /* Padding adjustment */
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.task-button:hover {
+    background-color: #0056b3;
+}

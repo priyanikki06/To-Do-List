@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern To-Do List</title>
+    <!-- External CSS and JS libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Modern To-Do List</h1>
+        <div class="input-container">
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Add a new task">
+                <button id="datePickerIcon" class="icon-btn calendar-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </button>
+            </div>
+            <button id="addTaskButton" class="task-button">Add Task</button>
+        </div>
+        <ul id="taskList">
+            <!-- Tasks will be added here dynamically -->
+        </ul>
+    </div>
+    <!-- Edit Task Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Edit Task</h2>
+            <input type="text" id="editTaskInput" placeholder="Edit task" class="large-input">
+            <input type="text" id="editDatePicker" placeholder="Edit due date" readonly>
+            <button id="saveEditButton" class="task-button">Save</button>
+        </div>
+    </div>
+   
+   
+    <!-- Reminder Options Modal -->
+    <div id="reminderModal" class="modal">
+        <div class="modal-content">
+            <h2>Select Reminder Time</h2>
+            <div class="reminder-options">
+                <button class="reminder-option" data-time="5">5 seconds</button>
+                <button class="reminder-option" data-time="10">10 seconds</button>
+                <button class="reminder-option" data-time="15">15 seconds</button>
+            </div>
+        </div>
+    </div>
+
+<!-- Reminder Card -->
+<div id="reminderCard" class="reminder-card">
+    <div class="reminder-content">
+        <span id="reminderText"></span>
+        <button id="dismissReminder">Dismiss</button>
+    </div>
+</div>
+
+
+    <!-- Hidden Date Picker -->
+    <input type="text" id="datePicker" style="display: none;">
+    <!-- Script -->
+    <script src="script.js"></script>
+
+</body>
+</html>
